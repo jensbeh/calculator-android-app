@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="statusBarNight">#2B2B2B</color>
+    <color name="statusBarDay">#B6B6B6</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="Black">#000000</color>
+
+    <!-- Functional Button Colors -->
+    <color name="colorFuncButtonBG">#373737</color>
+    <color name="colorFuncButtonTxt">#A6A6A6</color>
+
+    <!-- Number Button Colors -->
+    <color name="colorNumButtonBG">#A6A6A6</color>
+    <color name="colorNumButtonTxt">#373737</color>
+
+    <!-- Equal Button Colors -->
+    <color name="colorEqlButtonBG">#EC7701</color>
+    <color name="colorEqlButtonTxt">#373737</color>
+
+</resources>

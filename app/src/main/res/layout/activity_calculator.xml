@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_calculator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_button"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="-7dp"
+        android:gravity="bottom">
+
+        <include
+            layout="@layout/calc_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <include
+            layout="@layout/calc_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/vf"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <include android:id="@+id/include1" layout="@layout/ikinci" />
+        <include android:id="@+id/map" layout="@layout/third_layout" />
+
+    </ViewFlipper>
+
+</RelativeLayout>
