@@ -30,12 +30,56 @@
         android:textSize="40sp"
         app:backgroundTint="@color/colorFuncButtonBG" />
 
+    <!--  2nd Line of Buttons  -->
+
+    <Button
+        android:id="@+id/button_Change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
+
+        android:minWidth="80dp"
+        android:minHeight="80dp"
+        android:radius="10dp"
+        android:text="⟳"
+
+        android:textColor="@color/colorFuncButtonTxt"
+        android:textSize="40sp"
+        app:backgroundTint="@color/colorFuncButtonBG"
+        android:onClick="changeView"
+        />
+
+    <Button
+        android:id="@+id/button_Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
+
+        android:minWidth="80dp"
+        android:minHeight="80dp"
+        android:radius="10dp"
+        android:text="⌫"
+
+        android:textColor="@color/colorFuncButtonTxt"
+        android:textSize="40sp"
+        app:backgroundTint="@color/colorFuncButtonBG" />
+
     <Button
         android:id="@+id/button_Percentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
-        android:layout_column="1"
+        android:layout_column="2"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
@@ -55,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
-        android:layout_column="2"
+        android:layout_column="3"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
@@ -64,7 +108,7 @@
         android:minWidth="80dp"
         android:minHeight="80dp"
         android:radius="10dp"
-        android:text="/"
+        android:text="÷"
 
         android:textColor="@color/colorFuncButtonTxt"
         android:textSize="40sp"
@@ -74,7 +118,7 @@
         android:id="@+id/button_Multiply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="0"
+        android:layout_row="1"
         android:layout_column="3"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
@@ -89,8 +133,6 @@
         android:textColor="@color/colorFuncButtonTxt"
         android:textSize="40sp"
         app:backgroundTint="@color/colorFuncButtonBG" />
-
-    <!--  2nd Line of Buttons  -->
 
     <Button
         android:id="@+id/button_Seven"
@@ -152,11 +194,13 @@
         android:textSize="40sp"
         app:backgroundTint="@color/colorNumButtonBG" />
 
+    <!--  3rd Line of Buttons  -->
+
     <Button
         android:id="@+id/button_Minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="1"
+        android:layout_row="2"
         android:layout_column="3"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
@@ -171,8 +215,6 @@
         android:textColor="@color/colorFuncButtonTxt"
         android:textSize="40sp"
         app:backgroundTint="@color/colorFuncButtonBG" />
-
-    <!--  3rd Line of Buttons  -->
 
     <Button
         android:id="@+id/button_Four"
@@ -196,7 +238,7 @@
 
     <Button
         android:id="@+id/button_Five"
-        android:layout_width="wrap_content"
+        android:layout_width="97dp"
         android:layout_height="wrap_content"
         android:layout_row="2"
         android:layout_column="1"
@@ -234,11 +276,13 @@
         android:textSize="40sp"
         app:backgroundTint="@color/colorNumButtonBG" />
 
+    <!--  4th Line of Buttons  -->
+
     <Button
         android:id="@+id/button_Plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="2"
+        android:layout_row="3"
         android:layout_column="3"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
@@ -253,8 +297,6 @@
         android:textColor="@color/colorFuncButtonTxt"
         android:textSize="40sp"
         app:backgroundTint="@color/colorFuncButtonBG" />
-
-    <!--  4th Line of Buttons  -->
 
     <Button
         android:id="@+id/button_One"
@@ -316,36 +358,36 @@
         android:textSize="40sp"
         app:backgroundTint="@color/colorNumButtonBG" />
 
+    <!--  5th Line of Buttons  -->
+
     <Button
         android:id="@+id/button_Equal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="3"
+        android:layout_height="75dp"
+        android:layout_row="4"
+        android:layout_rowSpan="1"
         android:layout_column="3"
         android:layout_columnWeight="1"
+        android:layout_gravity="fill_vertical"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_gravity="fill_vertical"
-        android:layout_rowSpan="2"
 
+        android:layout_marginRight="2dp"
         android:minWidth="80dp"
         android:minHeight="80dp"
         android:radius="10dp"
-        android:text="="
 
+        android:text="="
         android:textColor="@color/colorEqlButtonTxt"
         android:textSize="40sp"
         app:backgroundTint="@color/colorEqlButtonBG" />
-
-    <!--  5th Line of Buttons  -->
 
     <Button
         android:id="@+id/button_Dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="4"
-        android:layout_column="0"
+        android:layout_column="2"
         android:layout_columnWeight="1"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
@@ -375,26 +417,6 @@
         android:minHeight="80dp"
         android:radius="10dp"
         android:text="0"
-
-        android:textColor="@color/colorNumButtonTxt"
-        android:textSize="40sp"
-        app:backgroundTint="@color/colorNumButtonBG" />
-
-    <Button
-        android:id="@+id/button_DoubleZero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="4"
-        android:layout_column="2"
-        android:layout_columnWeight="1"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="2dp"
-
-        android:minWidth="80dp"
-        android:minHeight="80dp"
-        android:radius="10dp"
-        android:text="00"
 
         android:textColor="@color/colorNumButtonTxt"
         android:textSize="40sp"

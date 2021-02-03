@@ -3,8 +3,8 @@ package com.claculator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +18,46 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private TextView calcText;
     private TextView resultText;
+    private ViewFlipper vf;
+    private Button one;
+    private Button two;
+    private Button three;
+    private Button four;
+    private Button five;
+    private Button six;
+    private Button seven;
+    private Button eight;
+    private Button nine;
+    private Button zero;
+    private Button plus;
+    private Button minus;
+    private Button multiply;
+    private Button divide;
+    private Button clear;
+    private Button delete;
+    private Button equal;
+    private Button percentage;
+    private Button change;
+
+    private Button one2;
+    private Button two2;
+    private Button three2;
+    private Button four2;
+    private Button five2;
+    private Button six2;
+    private Button seven2;
+    private Button eight2;
+    private Button nine2;
+    private Button zero2;
+    private Button plus2;
+    private Button minus2;
+    private Button multiply2;
+    private Button divide2;
+    private Button clear2;
+    private Button delete2;
+    private Button equal2;
+    private Button percentage2;
+    private Button change2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,165 +66,250 @@ public class CalculatorActivity extends AppCompatActivity {
 
         calcText = findViewById(R.id.tf_calc);
         resultText = findViewById(R.id.tf_result);
+        vf = (ViewFlipper) findViewById(R.id.vf_button);
 
         calcText.setText("");
         resultText.setText("");
 
-        final Button one = findViewById(R.id.button_One);
-        final Button two = findViewById(R.id.button_Two);
-        final Button three = findViewById(R.id.button_Three);
-        final Button four = findViewById(R.id.button_Four);
-        final Button five = findViewById(R.id.button_Five);
-        final Button six = findViewById(R.id.button_Six);
-        final Button seven = findViewById(R.id.button_Seven);
-        final Button eight = findViewById(R.id.button_Eight);
-        final Button nine = findViewById(R.id.button_Nine);
-        final Button zero = findViewById(R.id.button_Zero);
-        final Button doubleZero = findViewById(R.id.button_DoubleZero);
-        final Button plus = findViewById(R.id.button_Plus);
-        final Button minus = findViewById(R.id.button_Minus);
-        final Button multiply = findViewById(R.id.button_Multiply);
-        final Button divide = findViewById(R.id.button_Divide);
-        final Button clear = findViewById(R.id.button_Clear);
-        final Button equal = findViewById(R.id.button_Equal);
+        one = (Button) findViewById(R.id.button_One);
+        two = (Button) findViewById(R.id.button_Two);
+        three = (Button) findViewById(R.id.button_Three);
+        four = (Button) findViewById(R.id.button_Four);
+        five = (Button) findViewById(R.id.button_Five);
+        six = (Button) findViewById(R.id.button_Six);
+        seven = (Button) findViewById(R.id.button_Seven);
+        eight = (Button) findViewById(R.id.button_Eight);
+        nine = (Button) findViewById(R.id.button_Nine);
+        zero = (Button) findViewById(R.id.button_Zero);
+        plus = (Button) findViewById(R.id.button_Plus);
+        minus = (Button) findViewById(R.id.button_Minus);
+        multiply = (Button) findViewById(R.id.button_Multiply);
+        divide = (Button) findViewById(R.id.button_Divide);
+        percentage = (Button) findViewById(R.id.button_Percentage);
+        equal = (Button) findViewById(R.id.button_Equal);
+        clear = (Button) findViewById(R.id.button_Clear);
+        delete = (Button) findViewById(R.id.button_Delete);
+        change = (Button) findViewById(R.id.button_Change);
 
-        one.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("1");
-                    updateCalc();
-                }
-            }
-        });
-        two.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("2");
-                    updateCalc();
-                }
-            }
-        });
-        three.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("3");
-                    updateCalc();
-                }
-            }
-        });
-        four.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("4");
-                    updateCalc();
-                }
-            }
-        });
-        five.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("5");
-                    updateCalc();
-                }
-            }
-        });
-        six.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("6");
-                    updateCalc();
-                }
-            }
-        });
-        seven.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("7");
-                    updateCalc();
-                }
-            }
-        });
-        eight.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("8");
-                    updateCalc();
-                }
-            }
-        });
-        nine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("9");
-                    updateCalc();
-                }
-            }
-        });
-        zero.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("0");
-                    updateCalc();
-                }
-            }
-        });
-        doubleZero.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
-                    calc.append("00");
-                    updateCalc();
-                }
-            }
-        });
-        plus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
-                    calc.append("+");
-                    updateCalc();
-                }
-            }
-        });
-        minus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
-                    calc.append("-");
-                    updateCalc();
-                }
-            }
-        });
-        multiply.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
-                    calc.append("×");
-                    updateCalc();
-                }
-            }
-        });
-        divide.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
-                    calc.append("/");
-                    updateCalc();
-                }
-            }
-        });
-        clear.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0) {
-                    calc.setLength(0);
-                    resultText.setText("");
-                    updateCalc();
-                }
-            }
-        });
-        equal.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
-                    evaluate();
-                }
-            }
-        });
+        one2 = (Button) findViewById(R.id.button_One2);
+        two2 = (Button) findViewById(R.id.button_Two2);
+        three2 = (Button) findViewById(R.id.button_Three2);
+        four2 = (Button) findViewById(R.id.button_Four2);
+        five2 = (Button) findViewById(R.id.button_Five2);
+        six2 = (Button) findViewById(R.id.button_Six2);
+        seven2 = (Button) findViewById(R.id.button_Seven2);
+        eight2 = (Button) findViewById(R.id.button_Eight2);
+        nine2 = (Button) findViewById(R.id.button_Nine2);
+        zero2 = (Button) findViewById(R.id.button_Zero2);
+        plus2 = (Button) findViewById(R.id.button_Plus2);
+        minus2 = (Button) findViewById(R.id.button_Minus2);
+        multiply2 = (Button) findViewById(R.id.button_Multiply2);
+        divide2 = (Button) findViewById(R.id.button_Divide2);
+        percentage2 = (Button) findViewById(R.id.button_Percentage2);
+        equal2 = (Button) findViewById(R.id.button_Equal2);
+        clear2 = (Button) findViewById(R.id.button_Clear2);
+        delete2 = (Button) findViewById(R.id.button_Delete2);
+        change2 = (Button) findViewById(R.id.button_Change2);
+
+
+        one.setOnClickListener(this::onOneClick);
+        one2.setOnClickListener(this::onOneClick);
+
+        two.setOnClickListener(this::onTwoClick);
+        two2.setOnClickListener(this::onTwoClick);
+
+        three.setOnClickListener(this::onThreeClick);
+        three2.setOnClickListener(this::onThreeClick);
+
+        four.setOnClickListener(this::onFourClick);
+        four2.setOnClickListener(this::onFourClick);
+
+        five.setOnClickListener(this::onFiveClick);
+        five2.setOnClickListener(this::onFiveClick);
+
+        six.setOnClickListener(this::onSixClick);
+        six2.setOnClickListener(this::onSixClick);
+
+        seven.setOnClickListener(this::onSevenClick);
+        seven2.setOnClickListener(this::onSevenClick);
+
+        eight.setOnClickListener(this::onEightClick);
+        eight2.setOnClickListener(this::onEightClick);
+
+        nine.setOnClickListener(this::onNineClick);
+        nine2.setOnClickListener(this::onNineClick);
+
+        zero.setOnClickListener(this::onZeroClick);
+        zero2.setOnClickListener(this::onZeroClick);
+
+        plus.setOnClickListener(this::onPlusClick);
+        plus2.setOnClickListener(this::onPlusClick);
+
+        minus.setOnClickListener(this::onMinusClick);
+        minus2.setOnClickListener(this::onMinusClick);
+
+        multiply.setOnClickListener(this::onMultiplyClick);
+        multiply2.setOnClickListener(this::onMultiplyClick);
+
+        divide.setOnClickListener(this::onDivideClick);
+        divide2.setOnClickListener(this::onDivideClick);
+
+        percentage.setOnClickListener(this::onPercentageClick);
+        percentage2.setOnClickListener(this::onPercentageClick);
+
+        equal.setOnClickListener(this::onEqualClick);
+        equal2.setOnClickListener(this::onEqualClick);
+
+        clear.setOnClickListener(this::onClearClick);
+        clear2.setOnClickListener(this::onClearClick);
+
+        delete.setOnClickListener(this::onDeleteClick);
+        delete2.setOnClickListener(this::onDeleteClick);
+
+        change.setOnClickListener(this::changeView);
+        change2.setOnClickListener(this::changeView);
     }
+
+    private void onOneClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("1");
+            updateCalc();
+        }
+    }
+
+    private void onTwoClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("2");
+            updateCalc();
+        }
+    }
+
+    private void onThreeClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("3");
+            updateCalc();
+        }
+    }
+
+    private void onFourClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("4");
+            updateCalc();
+        }
+    }
+
+    private void onFiveClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("5");
+            updateCalc();
+        }
+    }
+
+    private void onSixClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("6");
+            updateCalc();
+        }
+    }
+
+    private void onSevenClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("7");
+            updateCalc();
+        }
+    }
+
+    private void onEightClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("8");
+            updateCalc();
+        }
+    }
+
+    private void onNineClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("9");
+            updateCalc();
+        }
+    }
+
+    private void onZeroClick(View view) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+            calc.append("0");
+            updateCalc();
+        }
+    }
+
+    private void onPlusClick(View view) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+            calc.append("+");
+            updateCalc();
+        }
+    }
+
+    private void onMinusClick(View view) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+            calc.append("-");
+            updateCalc();
+        }
+    }
+
+    private void onMultiplyClick(View view) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+            calc.append("×");
+            updateCalc();
+        }
+    }
+
+    private void onDivideClick(View view) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+            calc.append("/");
+            updateCalc();
+        }
+    }
+
+    private void onPercentageClick(View view) {
+        //if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+        //calc.append("%");
+        //updateCalc();
+        //}
+    }
+
+    private void onEqualClick(View view) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+            evaluate();
+        }
+    }
+
+    private void onClearClick(View view) {
+        if (calc.length() != 0) {
+            calc.setLength(0);
+            calcText.setText("");
+            resultText.setText("");
+        }
+    }
+
+    private void onDeleteClick(View view) {
+        if(calc.length() > 0){
+            calc.deleteCharAt(calc.length() - 1);
+            updateCalc();
+        }
+    }
+
+    public void changeView(View view) {
+        System.out.println("HEY");
+        switch (vf.getDisplayedChild()){
+            case 0:
+                vf.setDisplayedChild(1);
+                break;
+            case 1:
+                vf.setDisplayedChild(0);
+                break;
+        }
+    }
+
+
+
 
     static boolean contains(char c, char[] array) {
         for (char x : array) {

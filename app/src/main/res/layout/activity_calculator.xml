@@ -11,15 +11,14 @@
         android:id="@+id/ll_result"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/ll_button"
+        android:layout_above="@id/vf_button"
         android:layout_gravity="bottom"
         android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
         android:layout_marginBottom="-7dp"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:background="@drawable/border_set">
 
         <include
             layout="@layout/calc_result"
@@ -27,31 +26,32 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_button"
+    <ViewFlipper
+        android:id="@+id/vf_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:orientation="horizontal">
+        android:inAnimation="@android:anim/fade_in"
+        android:orientation="horizontal"
+        android:outAnimation="@android:anim/fade_out"
+        android:measureAllChildren="false">
 
         <include
             layout="@layout/calc_buttons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
 
-    <ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/vf"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <include android:id="@+id/include1" layout="@layout/ikinci" />
-        <include android:id="@+id/map" layout="@layout/third_layout" />
-
+        <include
+            layout="@layout/calc_more_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
     </ViewFlipper>
 
 </RelativeLayout>
