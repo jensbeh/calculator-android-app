@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- StatusBar Colors -->
+    <color name="statusBar">#2B2B2B</color>
+
+    <!-- Background Colors -->
+    <color name="uiBackground">#000000</color>
+
+    <!-- Text Colors -->
+    <color name="textColor">#FFFFFF</color>
+
+</resources>
