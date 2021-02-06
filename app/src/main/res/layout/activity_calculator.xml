@@ -30,15 +30,16 @@
         app:layout_constraintTop_toBottomOf="@+id/include">
 
         <include
-            layout="@layout/calc_new_button"
+            layout="@layout/calc_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom" />
 
         <include
-            layout="@layout/calc_more_buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            layout="@layout/calc_more_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
 
     </ViewFlipper>
 </androidx.constraintlayout.widget.ConstraintLayout>

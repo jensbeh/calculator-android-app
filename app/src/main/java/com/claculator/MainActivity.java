@@ -73,26 +73,26 @@ public class MainActivity extends AppCompatActivity {
         Button delete = findViewById(R.id.button_delete);
         Button change = findViewById(R.id.button_change);
 
-        Button one2 = findViewById(R.id.button_One2);
-        Button two2 = findViewById(R.id.button_Two2);
-        Button three2 = findViewById(R.id.button_Three2);
-        Button four2 = findViewById(R.id.button_Four2);
-        Button five2 = findViewById(R.id.button_Five2);
-        Button six2 = findViewById(R.id.button_Six2);
-        Button seven2 = findViewById(R.id.button_Seven2);
-        Button eight2 = findViewById(R.id.button_Eight2);
-        Button nine2 = findViewById(R.id.button_Nine2);
-        Button zero2 = findViewById(R.id.button_Zero2);
-        Button plus2 = findViewById(R.id.button_Plus2);
-        Button minus2 = findViewById(R.id.button_Minus2);
-        Button multiply2 = findViewById(R.id.button_Multiply2);
-        Button divide2 = findViewById(R.id.button_Divide2);
-        Button percentage2 = findViewById(R.id.button_Percentage2);
-        Button equal2 = findViewById(R.id.button_Equal2);
-        Button dot2 = findViewById(R.id.button_Dot2);
-        Button clear2 = findViewById(R.id.button_Clear2);
-        Button delete2 = findViewById(R.id.button_Delete2);
-        Button change2 = findViewById(R.id.button_Change2);
+        Button one2 = findViewById(R.id.button_one2);
+        Button two2 = findViewById(R.id.button_two2);
+        Button three2 = findViewById(R.id.button_three2);
+        Button four2 = findViewById(R.id.button_four2);
+        Button five2 = findViewById(R.id.button_five2);
+        Button six2 = findViewById(R.id.button_six2);
+        Button seven2 = findViewById(R.id.button_seven2);
+        Button eight2 = findViewById(R.id.button_eight2);
+        Button nine2 = findViewById(R.id.button_nine2);
+        Button zero2 = findViewById(R.id.button_zero2);
+        Button plus2 = findViewById(R.id.button_plus2);
+        Button minus2 = findViewById(R.id.button_minus2);
+        Button multiply2 = findViewById(R.id.button_multiply2);
+        Button divide2 = findViewById(R.id.button_divide2);
+        Button percentage2 = findViewById(R.id.button_percent2);
+        Button equal2 = findViewById(R.id.button_equal2);
+        Button dot2 = findViewById(R.id.button_dot2);
+        Button clear2 = findViewById(R.id.button_clear2);
+        Button delete2 = findViewById(R.id.button_delete2);
+        Button change2 = findViewById(R.id.button_change2);
 
 
         one.setOnClickListener(this::onOneClick);

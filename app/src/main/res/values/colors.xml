@@ -18,6 +18,9 @@
     <color name="colorFuncButtonBG">#373737</color>
     <color name="colorFuncButtonTxt">#EF7902</color> <!-- #A6A6A6  -->
     <color name="clearButton">#131313</color>
+    <color name="secondLayerButton">#323232</color>
+    <color name="colorFuncButtonsSecondRowTxt">#ACACAC</color> <!-- #A6A6A6  -->
+    <color name="colorFuncButtonSecondLayerTxt">#717171</color> <!-- #A6A6A6  -->
 
     <!-- Number Button Colors -->
     <color name="colorNumButtonBG">#A6A6A6</color>
