@@ -15,11 +15,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private StringBuilder calc = new StringBuilder();
-    char[] operation = {'+', '-', '×', '/', '.'};
+    char[] operation = {'+', '-', '×', '÷', '.'};
     char[] numbers = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     private static boolean nullDivisionError = false;
     private boolean equalsWasPressed;
     private boolean clearWhenNextIsNumber;
+    private int openBracketCount = 0;
+    private int closeBracketCount = 0;
 
     private TextView calcText;
     private TextView resultText;
@@ -94,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
         Button delete2 = findViewById(R.id.button_delete2);
         Button change2 = findViewById(R.id.button_change2);
 
+        Button openBrace = findViewById(R.id.button_open_brace);
+        Button closeBrace = findViewById(R.id.button_close_brace);
+
 
         one.setOnClickListener(this::onOneClick);
         one2.setOnClickListener(this::onOneClick);
@@ -154,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
 
         change.setOnClickListener(this::changeView);
         change2.setOnClickListener(this::changeView);
+
+        openBrace.setOnClickListener(this::onOpenBracketClick);
+        closeBrace.setOnClickListener(this::onCloseBracketClick);
     }
 
     // ===========================================================================================
@@ -217,11 +225,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onDivideClick(View view) {
-        onOperatorButtonClick("/");
+        onOperatorButtonClick("÷");
     }
 
     private void onPercentageClick(View view) {
-        //onOperatorButtonClick("%");
+        onOperatorButtonClick("%");
+    }
+
+    private void onOpenBracketClick(View view) {
+        onBracketClick("(");
+    }
+
+    private void onCloseBracketClick(View view) {
+        onBracketClick(")");
     }
 
 
@@ -230,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
     // ===========================================================================================
 
     private void onEqualClick(View view) {
-        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation) && !equalsWasPressed) {
             equalsWasPressed = true;
             updateResult();
         }
@@ -272,9 +288,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void onDeleteClick(View view) {
         if (calc.length() > 0) {
+            if (calc.charAt(calc.length() - 1) == '(') {
+                openBracketCount--;
+            } else if (calc.charAt(calc.length() - 1) == ')') {
+                closeBracketCount--;
+            }
             calc.deleteCharAt(calc.length() - 1);
             updateCalcText();
-            if ((calc.length() > 0) && !contains(calc.charAt(calc.length() - 1), operation)) {
+            if ((calc.length() > 0) && !contains(calc.charAt(calc.length() - 1), operation) && (openBracketCount == closeBracketCount)) {
                 updateResult();
             }
             if (calc.length() == 0) {
@@ -284,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeView(View view) {
-        System.out.println("VIEW CHANGED");
+        //System.out.println("VIEW CHANGED");
         switch (vf.getDisplayedChild()) {
             case 0:
                 vf.setDisplayedChild(1);
@@ -300,15 +321,19 @@ public class MainActivity extends AppCompatActivity {
     // ===========================================================================================
 
     private void onNumberButtonClick(String number) {
-        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers)) {
+        if (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), numbers) || contains(calc.charAt(calc.length() - 1), new char[]{'('})) {
             if (clearWhenNextIsNumber) {
                 calc.setLength(0);
                 clearWhenNextIsNumber = false;
             }
 
+            equalsWasPressed = false;
+
             calc.append(number);
             updateCalcText();
-            updateResult();
+            if (openBracketCount == closeBracketCount) {
+                updateResult();
+            }
             if (addToCalcHistoryList) {
                 updateHistoryList();
                 addToCalcHistoryList = false;
@@ -321,11 +346,66 @@ public class MainActivity extends AppCompatActivity {
     // ===========================================================================================
 
     private void onOperatorButtonClick(String operator) {
-        if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation)) {
+        if (calc.length() == 0 && operator.equals("-")) {
+            calc.append("-");
+            equalsWasPressed = false;
+
+            clearWhenNextIsNumber = false;
+            addToCalcHistoryList = false;
+            updateCalcText();
+        } else if (calc.length() != 0 && !contains(calc.charAt(calc.length() - 1), operation) && operator.equals("%")) {
+            // ÷100
+            calc.append("÷100");
+            equalsWasPressed = true;
+
+            updateCalcText();
+            if (openBracketCount == closeBracketCount) {
+                updateResult();
+            }
+        } else if (calc.length() != 0 && contains(calc.charAt(calc.length() - 1), operation)) {
+            calc.deleteCharAt(calc.length()-1); // change operator
+
+            equalsWasPressed = false;
             calc.append(operator);
             clearWhenNextIsNumber = false;
             addToCalcHistoryList = false;
             updateCalcText();
+        } else {
+
+            equalsWasPressed = false;
+
+
+            calc.append(operator);
+            clearWhenNextIsNumber = false;
+            addToCalcHistoryList = false;
+            updateCalcText();
+        }
+    }
+
+    // ===========================================================================================
+    // Bracket Click
+    // ===========================================================================================
+
+    private void onBracketClick(String bracket) {
+        //open Bracket
+        if (bracket.equals("(") && (calc.length() == 0 || contains(calc.charAt(calc.length() - 1), operation) || contains(calc.charAt(calc.length() - 1), new char[]{'('}) || contains(calc.charAt(calc.length() - 1), numbers))) {
+            calc.append(bracket);
+            openBracketCount++;
+            clearWhenNextIsNumber = false;
+            addToCalcHistoryList = false;
+            updateCalcText();
+        }
+
+        // close Bracket
+        if (bracket.equals(")") && openBracketCount > closeBracketCount && !contains(calc.charAt(calc.length() - 1), new char[]{'('})) {
+            calc.append(bracket);
+            closeBracketCount++;
+            clearWhenNextIsNumber = false;
+            addToCalcHistoryList = false;
+            updateCalcText();
+        }
+        if ((openBracketCount == closeBracketCount) && (openBracketCount > 0)) {
+            updateResult();
         }
     }
 
@@ -345,7 +425,6 @@ public class MainActivity extends AppCompatActivity {
         calcHistoryAdapter.setOnItemCLickListener(new calcHistoryAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                System.out.println("HELLO ###################################");
                 updateHistoryList();
                 calc = new StringBuilder(calcHistoryList.get(position));
 
@@ -383,40 +462,22 @@ public class MainActivity extends AppCompatActivity {
         String expr = calc.toString();
 
         // Calculate result
-        double result = Calculator.evaluate(expr);
+        String result = Calculator.evaluate(expr);
+        System.out.println("result -> " + result);
 
         if (!nullDivisionError) {
-            // to set 1.0 -> 1
-            if (result % 1 == 0) {
-                int newResult = (int) result;
-                resultText.setText("= " + newResult);
+            //System.out.println("result: " + result);
+            resultText.setText("= " + result);
 
-                if (equalsWasPressed) {
+            if (equalsWasPressed) {
 
-                    calcHistoryString = calc.toString();
-                    resultHistoryString = String.valueOf(newResult);
+                calcHistoryString = calc.toString();
+                resultHistoryString = String.valueOf(result);
 
-                    calc.setLength(0);
-                    calc.append(newResult).toString();
-                    clearWhenNextIsNumber = true;
-                    addToCalcHistoryList = true;
-                    equalsWasPressed = false;
-                }
-            } else {
-                System.out.println("result: " + result);
-                resultText.setText("= " + result);
-
-                if (equalsWasPressed) {
-
-                    calcHistoryString = calc.toString();
-                    resultHistoryString = String.valueOf(result);
-
-                    calc.setLength(0);
-                    calc.append(result).toString();
-                    clearWhenNextIsNumber = true;
-                    addToCalcHistoryList = true;
-                    equalsWasPressed = false;
-                }
+                calc.setLength(0);
+                calc.append(result);
+                clearWhenNextIsNumber = true;
+                addToCalcHistoryList = true;
             }
         } else {
             resultText.setText("nicht Definiert!");

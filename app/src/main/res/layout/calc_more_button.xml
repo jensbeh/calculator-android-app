@@ -18,7 +18,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/secondRow"
             android:textColor="@color/colorFuncButtonSecondLayerTxt"
             android:textSize="20sp" />
@@ -31,7 +31,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/deg_rad"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -44,7 +44,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/sin"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -57,7 +57,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/cos"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -70,7 +70,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/tan"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -89,7 +89,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/x_hoch_y"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -102,7 +102,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/lg"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -115,7 +115,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/ln"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -160,7 +160,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/root"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -228,7 +228,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/faculty"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -294,7 +294,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/one_durch_x"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -360,7 +360,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/secondLayerButton"
+            android:backgroundTint="@color/notYetImplemented"
             android:text="@string/pi"
             android:textColor="@color/colorFuncButtonsSecondRowTxt"
             android:textSize="20sp" />
@@ -439,7 +439,7 @@
             android:layout_weight="1"
             android:background="@drawable/round_button"
             android:text="@string/e"
-            android:textColor="@color/white"
+            android:textColor="@color/red"
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
