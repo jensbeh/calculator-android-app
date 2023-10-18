@@ -1,6 +1,6 @@
 # Android Calculator
 
-This app is a calculator for Android that allows users to calculate complex formulas with brackets. Please note that not all functions are implemented at the current time.
+This app is a calculator for Android written in Java that allows the user to calculate complex formulas with brackets. Please note that not all functions are implemented at the current time.
 
 
 ## Features
